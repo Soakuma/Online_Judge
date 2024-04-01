@@ -64,5 +64,5 @@ int main(){
   if(diff > count){
     diff = count;
   }
-  printf("%d", count);
+  printf("%d", diff);
 }
