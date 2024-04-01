@@ -54,6 +54,19 @@ int main(){
     diff = count;
   }
   count = 0;
+  int i4 = 0;
+  for(int i = n-1; i >= 0; i--, i4++){
+    int j2 = 0;
+    for(int j = n-1; j >= i; j--, j2++){
+      if(tri1[j][i] != tri2[i4][j2]){
+        count++;
+      }
+    }
+  }
+  if(diff > count){
+    diff = count;
+  }
+  count = 0;
   int i3 = n-1;
   int j3 = 0;
   for(int i = 0; i < n; i++, j3++){
@@ -61,6 +74,21 @@ int main(){
     int curj = j3;
     for(int j = 0; j < i+1; j++){
       if(tri2[i][j] != tri1[curi--][curj--]){
+        count++;
+      }
+    }
+  }
+  if(diff > count){
+    diff = count;
+  }
+  count = 0;
+  int i5 = n-1;
+  int j5 = 0;
+  for(int i = 0; i < n; i++, i5--){
+    int curi = i5;
+    int curj = j5;
+    for(int j = 0; j < i+1; j++){
+      if(tri2[i][j] != tri1[curi++][curj++]){
         count++;
       }
     }
