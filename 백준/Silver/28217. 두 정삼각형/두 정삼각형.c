@@ -6,25 +6,29 @@ int main(){
   int tri1[n][n];
   int tri2[n][n];
   for(int i = 0; i < n; i++){
-    for(int j = 0; j < n; j++){
-      tri1[i][j] = -1;
-      tri2[i][j] = -1;
-    }
-  }
-  for(int i = 0; i < n; i++){
     for(int j = 0; j < i+1; j++){
       scanf("%d", &tri1[i][j]);
     }
   }
-  
   for(int i = 0; i < n; i++){
     for(int j = 0; j < i+1; j++){
       scanf("%d", &tri2[i][j]);
     }
   }
-  
   int diff = 9999;
   int count = 0;
+  for(int i = 0; i < n; i++){
+    for(int j = 0; j < i+1; j++){
+      if(tri1[i][j] != tri2[i][j]){
+        count++;
+      }
+    }
+  }
+  if(diff > count){
+    diff = count;
+  }
+  
+  count = 0;
   for(int i = 0; i < n; i++){
     int j2 = 0;
     for(int j = i; j >= 0; j--, j2++){
