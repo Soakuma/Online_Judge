@@ -15,7 +15,8 @@ string solution(vector<int> numbers) {
     }
     sort(temp.begin(), temp.end(), fnc);
     if(temp.at(0) == "0"){
-        return "0";}
+        return "0";
+    }
     for(auto num : temp){
         answer += num;
     }
